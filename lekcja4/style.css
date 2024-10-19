@@ -5,6 +5,26 @@ body
 	background-image: url("img/tlo.png");
 	margin:0px;
 }
+a:link			/*jak wyglada link */
+{
+	color:black;
+	text-decoration:none;
+}
+a:visited			/*po odwiedzeniu linku */
+{
+	color:black;
+	text-decoration:none;
+}
+a:hover			/*gdy najedziemy myszka na link*/
+{
+	color:#485b3b;
+	text-decoration:underline;
+}
+a:active		/*gdy jest wciśniety link myszka*/
+{
+	color:black;
+	text-decoration:none;
+}
 #logo
 {
 	width:100%;
@@ -59,8 +79,37 @@ ol.chapters > li > ul
 	letter-spacing:0px;
 	margin-top:5px;
 	margin-left:30px;
+	list-style-type:none;
 }
 ol.chapters > li > ul > li
 {
 	margin:0px;
 }
+ol > li > ul > li:before
+{
+	color:#485b3b;
+	content:"\2660";
+	margin-right:5px;
+}
+.slajd
+{
+	padding:20px 40px ; /*na poczatku os y pozniej x */
+	text-align:justify;
+}
+h1
+{
+	font-size:24px;
+	text-transform:uppercase;
+	font-weight:700;
+}
+.scrollup
+{
+	width:64px;
+	height:64px;
+	text-decoration:none;
+	background:url("img/up.png") no-repeat 0px 0px;		/*dodanie zdjecia przycisku jako tło, no-repeat nie pozwala na powtarzanie grafiki tła jezeli rozmiar przekroczy 64x64 px*/
+	position:fixed; /*pozycja przypisana na stale*/		/*0px i 0px oznacza to że rozpoczyna wypelnianie tla od lewej gornej krawedzi hiperłącza*/
+	right:50px; /*50 pixeli odstepu od prawej krawedzi ekranu*/
+	bottom:50px;/*50 pixeli odstepu od dolnej krawedzi ekranu*/
+	display:none;
+}														

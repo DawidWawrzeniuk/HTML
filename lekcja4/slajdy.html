@@ -1,84 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="pl">			<!--ustawienie jezyka na polski -->
-<head>
-<meta charset="utf-8"/>		<!--kodowanie znaków-->
-<title>Monitory komputerowe</title>				<!--tytuł-->
-<meta name="description" content="Zobacz wszystko co powinieneś wiedzieć o monitorach komputerowych w technikum informatycznym"/>	<!--opis widoczny na wyszukiwarce-->
-<meta name="keywords" content="budowa zasada działania, CRT, LCD, złącza, wady, zalety, parametry monitorów, oznaczenia, maski		<!--słowa kluczowe-->
-, rodzaje matryc: TN, PVA, MVA, IPS, wymiar przekątnej, rozdzielczość, wielkość plamki, wielkość piksela,
- jasność, kontrast, bad pixel, PDP, OLED, VGA, DSUB, HDMI, DVI, jaki monitor kupić , porównanie CRT vs LCD" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />					<!--specjalny kod aby strona byla prawidlowo odczytywana w internet explorer-->
-<link rel="stylesheet" href="style.css" type="text/css"/>			<!--podłączenie CSS-->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext" rel="stylesheet"		<!--customowe fonty -->
-type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="jquery.scrollTo.min.js"></script>
-<script>
-jQuery(function($)
-{
-	//zresetuj scrolla
-	$.scrollTo(0);
-	$('#link3').click(function(){$.scrollTo($('#maskicrt'),500); });
-	$('.scrollup').click(function(){$.scrollTo($('body'),1000); });
-}
-);
-//pokaz podczas przewijania
-$(window).scroll(function()
-{
-if($(this).scrollTop()>300) $('.scrollup').fadeIn();
-else $('.scrollup').fadeOut();
-}
-);
-</script>
-</head>
-<body>
-	<div id="logo">Wykład #1: Monitory komputerowe</div>			<!--kontener na dane-->
-	<div id="container">
-		<a href="#" class="scrollup"></a>
-		<div id="spis">
-		<ol class="chapters">				<!--lista uporządkowana-->
-			<li>
-				Monitory kineskopowe CRT
-				<ul>							<!--lista nie uporządkowana -->
-					<li>Budowa monitora</li>
-					<li>Zasada działania</li>		<!--pozycja w liście -->
-					<li><a id="link3" href="#">Maska. Rodzaje masek</a></li><!--id oznacza pozycje do ktorej ma przejsc jQuery a href ma tylko hasza bo nie ma tego robic html tylko jQuery -->
-					<li>Wady i zalety</li>
-					<li>Dobór parametrów</li>
-				</ul>
-			</li>
-			<li>
-				Monitory kineskopowe ciekłokrystaliczne LCD
-				<ul>
-					<li>Budowa monitora</li>
-					<li>Zasada działania</li>
-					<li>Maska. Rodzaje masek</li>
-					<li>Wady i zalety</li>
-					<li>Dobór parametrów</li>
-				</ul>
-			</li>
-			<li>
-				Sposoby podłączenia monitorów
-				<ul>
-					<li>DSUB</li>
-					<li>DVI</li>
-					<li>HDMI, Display Port</li>
-				</ul>
-			</li>
-			<li>
-				Dodatkowe informacje
-				<ul>
-					<li>Przyszłość monitorów i wyświetlaczy?</li>
-					<li>Wykorzystane źródła</li>				
-				</ul>
-			</li>
-		</ol>
-		</div>
-		
-		
-		
-		
-		
+
 		<!-- ######################## SLAJD 1.1 ######################## -->
 		
 		<div class="slajd">
@@ -139,7 +59,7 @@ else $('.scrollup').fadeOut();
 		
 		<div class="slajd">
 		
-			<h1 id="maskicrt">Rodzaje masek w monitorach CRT</h1>
+			<h1>Rodzaje masek w monitorach CRT</h1>
 			
 			Przed warstwą luminoforu znajduje się tzw. <strong>maska</strong> (ang. shadow mask), która pełni funkcję filtru dbającego o to, aby elektrony uderzały idealnie w powierzchnię wyznaczonych pól luminoforu (subpikseli) - co pozytywnie wpływa na jakość obrazu.
 			<br /><br />
@@ -608,15 +528,3 @@ else $('.scrollup').fadeOut();
 				<li>Wikipedia.pl</li>
 			</ul>
 		</div>
-
-		
-		
-		
-	</div>
-
-
-
-
-
-</body>
-</html>
