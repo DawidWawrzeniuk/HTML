@@ -154,11 +154,11 @@ a.tilelink
 	width:230px;
 	height:142px;
 }
-a.tilelinkhtml5
+a.tilelinkhtml5					/*klasa linku*/
 {
 	color:#ffffff;
-	text-decoration:none;
-	display:block;
+	text-decoration:none;		/*usuwa podkreślenie w linku*/
+	display:block;				/*tekst zajmuje całą dostępną szerokość kontenera */
 }
 a.sociallink
 {
