@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<title>Katalog samochodowy</title>
+	<meta name="description" content="Stwórz wymarzony model swojego samochodu!">
+	<meta name="keywords" content="samochód, katalog, salon, nowe auto">
+	<meta name="author" content="Jan Nowak">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<header>
+	
+		<h1>Wybierz konfigurację samochodu</h1>
+
+	</header>
+	
+	<main>
+	
+		<article>
+		
+			<form action="order.php" method="post" enctype="application/x-www-form-urlencoded">			<!--action okresla ktory skrypt php ma przetowrzyc dane które przyjda z naszego formularza-->
+				<div class="row">
+					<fieldset>		<!--znacznik grupujący elementy interfejsu-->
+						<legend>Rodzaj nadwozia</legend>	<!--legenda (tytul formularza)-->
+						<div><label><input type="radio" name="nadwozie" checked> Hatchback </label></div>								<!--znacznik typu radio-->																				<!--method okresla jakiej metody HTTP uzyc do przeslania danych z naszego formularza (get czy post)-->
+						<div><label><input type="radio" name="nadwozie"> Kabriolet </label></div>					<!--enctype to określenie identyfikatora MIME-type zawartosci przesylanej na serwer metodą post-->
+						<div><label><input type="radio" name="nadwozie"> Kombi </label></div>
+					</fieldset>
+				</div>
+				<div class="row">
+					<label for="silnik">Rodzaj silnika </label>
+					<select id="silnik">
+						<option>wysokoprężny</option>
+						<option selected>benzynowy</option>
+						<option>elektryczny</option>
+						<option>hybrydowy</option>
+					</select>
+				</div>	
+				<div class="row">
+					<fieldset>
+						<legend>Wyposazenie samochodu</legend>
+						<div class="col">
+							<div><label><input type="checkbox" disabled checked> klimatyzacja </label></div>		<!--disabled oznacza ze nie mozna wybierac tej opcji i jest stale zaznaczona, checked oznacza ze opcja jest startowo znaznaczona-->
+							<div><label><input type="checkbox" disabled checked> systemy: ESP i ABS </label></div>
+							<div><label><input type="checkbox"> tapicerka skórzana </label></div>
+							<div><label><input type="checkbox"> tempomat </label></div>
+						</div>
+						<div class="col">
+							<div><label><input type="checkbox"> tylny spojler dachowy </label></div>
+							<div><label><input type="checkbox"> radio z bluetooth </label></div>
+							<div><label><input type="checkbox"> reflektory przeciwmgłowe </label></div>
+							<div><label><input type="checkbox"> przyciemniane tylne szyby </label></div>
+						</div>
+						<div class="col">
+							<div><label><input type="checkbox"> czujniki parkowania </label></div>
+							<div><label><input type="checkbox"> podgrzewane fotele </label></div>
+							<div><label><input type="checkbox"> składane lusterka </label></div>
+							<div><label><input type="checkbox"> światła LED do jazdy dziennej </label></div>
+						</div>
+				</div>	
+				
+				<div class="row">
+					<label for="choinka"> Jakie choinki zapachowe </label>
+					<div style="margin-top:10px;">
+						<select id="choinka" multiple size="8">				<!--wybór wielokrotny--><!--size okresla ile opcji jest widocznych-->
+							<option>kokosowa</option>
+							<option selected>cytrynowa</option>
+							<option>truskawkowa</option>
+							<option>brzoskwiniowa</option>
+					</div>
+					</select>
+				</div>	
+				<div class="row">
+					<label> Imię <input type="text" placeholder="Jak masz na imie?"></label> <!--placeholder oznacza dodanie podpowiedzi-->
+					<label> Hasło <input type="password"></label>
+					<label> Szukaj <input type="search"></label>
+				</div>
+				<div class="row">
+					<label> Ile kluczyków <input type="number" step="1"></label> 	<!--step oznacza z jaką dokladnoscia mozemy wpisywac cyfry-->
+				</div>
+				<div class="row">
+					<input type="submit" value="zamawiam!">				<!--przycisk ktory zatwierdza formularz do wyslania do serwera i przenosi nas do order.php-->
+					<input type="button" value="zamawiam!">				<!--przycisk ktory zatwierdza formularz do wyslania do serwera ale nie przenosi nas do order.php-->
+					<button type="button"> Zamawiam! </button>				<!--dziala tak samo jak input type submit ale dodatkowo do niego mozemy do niego wsadzic obrazek, gdy dopiszemy type="button" to nie bedzie submittować (przechodzić do order.php)  -->
+				</div>
+				
+			</form>		
+			
+		</article>
+		
+	</main>
+
+</body>
+</html>
