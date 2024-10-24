@@ -32,7 +32,7 @@
 	
 		<article>
 		
-			<form action="order.php" method="post" enctype="application/x-www-form-urlencoded">			<!--action okresla ktory skrypt php ma przetowrzyc dane które przyjda z naszego formularza-->
+			<form action="order.php" method="post" enctype="multipart/form-data">			<!--action okresla ktory skrypt php ma przetowrzyc dane które przyjda z naszego formularza-->
 				<div class="row">
 					<fieldset>		<!--znacznik grupujący elementy interfejsu-->
 						<legend>Rodzaj nadwozia</legend>	<!--legenda (tytul formularza)-->
@@ -94,11 +94,39 @@
 				</div>
 				<div class="row">
 					<label> Adres e-mail<input type="email"></label>				<!--element dedykowany dawaniu adresu poczty elektronicznej. Jeżeli bedziemy mieli wpisane required to kontrolka nie akceptuje pustego pola-->
+					<label> Numer telefonu<input type="tel"></label>				<!--element dedykowany dawaniu nuumeru telefonu. Jeżeli bedziemy mieli wpisane required to kontrolka nie akceptuje pustego pola, stosujemy te pole aby np w telefnonie automatycznie wyświetlala sie klawiatura-->
 				</div>
+				<div class="row">
+					<label> Data dostawy<input type="date" min="2019-03-01" max="2019-03-31"></label>				<!--element dedykowany dawaniu daty. Jeżeli bedziemy mieli wpisane required to kontrolka nie akceptuje pustego pola-->
+					<label> Czas dostawy<input type="time" step="1" min="09:00" max="18:00" readonly></label>				<!--element dedykowany dawaniu czasu (godziny i liczby minut), jesli wpiszemy readonly to nie bedzie to pole edytowalne-->
+				</div>
+				<div class="row">
+					<div><label for="komentarz"> Uwagi do zamówienia </label></div>
+					<textarea id="komentarz" rows="4" cols="80" maxlength="25" minlength="10"></textarea>					<!--pole wieloliniowe do wpisywania jakiegos tekstu, przy uzyciu rows i cols mozemy zmienic rozmiar ramki -->		
+				</div>
+				<div class="row">
+					<label>Prześlij zdjecie poprzedniego samochodu </label> <input type="file" accept="image/x-png,image/gif,image/jpeg" multiple> <!--trzeba zmienic kodowanie w form aby kodowało obrazy i mozna ylo je przesyłać, multiple pozwala na dodawanie wielu plików-->
+				</div>
+				<div class="row">
+					<label> Kolor lakieru <input type="color" value="#ff0000"></label> 	<!--value oznacza kolor domyślny-->
+				</div>
+				<div class="row">
+					<label>Stopień realizacji zamówienia </label><progress max ="100" value="25" id=""></progress>  <!--postęp pewnego procesu, przez id mozemy wplywac na ten progres-->
+				</div>
+				<div class="row">
+						<label>Stopień zatankowania samochodu</label><meter min="0" max="100" title="procent" value="40" low="30" high="70" optimum="75"></meter>	<!--meter sluzy do okreslenia posteu gdy jest znana skala-->		
+				</div>
+				<div class="row">
+					<label>Twoja strona www	</label><input type="url" ></input> <!--mozemy wpisac adres strony internetowej (musimy miec prefix http//)-->
+				</div>
+				
+				<input type="hidden">
+				
 				<div class="row">
 					<input type="submit" value="zamawiam!">				<!--przycisk ktory zatwierdza formularz do wyslania do serwera i przenosi nas do order.php-->
 					<!--<input type="button" value="zamawiam!">	-->			<!--przycisk ktory zatwierdza formularz do wyslania do serwera ale nie przenosi nas do order.php-->
 					<!--<button type="button"> Zamawiam! </button>	-->			<!--dziala tak samo jak input type submit ale dodatkowo do niego mozemy do niego wsadzic obrazek, gdy dopiszemy type="button" to nie bedzie submittować (przechodzić do order.php)  -->
+					<input type="reset" value="wyczyść formularz"> <!--czysci formularz-->
 				</div>
 				
 			</form>		

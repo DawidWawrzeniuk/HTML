@@ -1,0 +1,64 @@
+body {
+	background-color: #404040;
+	font-size: 18px;
+	color: white;
+}
+main > * /*wszystko co znajduje sie w mainie*/
+{	
+	padding:10px;
+	text-align:center;
+}
+.container
+{
+	margin:0 auto;
+	max-width:1000px;
+	border: 1px solid red;
+	display:flex;	/*włącza układanie sie obok siebie*/
+	flex-direction: column; /*układanie sie divów (poziomo), gdy mamy row to oś pozioma to main a pionowa to cross, gdy bedziemy mieli column to oś pionowa to cross a pozioma to main, opcja reverse odwraca ustawienie*/
+	/*flex-wrap: wrap; zawijaj wiersze*/
+	gap:10px; /*odleglosc miedzy elementami w containerze*/
+	justify-content:center; /*elementy w container beda na środku (wyśrodkowane)*/
+}
+.row1, .row2
+{
+	display:flex;	/*nie jest dziedziczona*/
+	gap:10px;
+}
+.red
+{
+	background-color:lightcoral;
+	flex-basis:100%; /*to to samo co width*/
+}
+.green
+{
+	background-color:seagreen;
+	flex-basis:47%;
+}
+.blue
+{
+	background-color:skyblue;
+	flex-basis:47%;
+	flex-grow:1; /*pozwala rosnąć pojemnikowi jesli jest miejsce*/
+}
+nav
+{
+	background-color:chocolate;
+	/*flex-basis:18%;*/
+	flex: 1 0 18%; 			/*to wersja taka combo, na poczatku wartosc dla flex grow potem shrink a na koncu dla flex basis*/
+}
+article
+{
+	background-color:blueviolet;
+	flex-basis:50%;
+	
+}
+aside
+{
+	background-color:darkcyan;
+	flex-basis:18%;
+}
+footer
+{
+	background-color:crimson;
+	flex-basis:100%;
+}
